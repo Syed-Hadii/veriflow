@@ -145,7 +145,8 @@ const updateProfile = async (req, res) => {
       });
     }
 
-    const hasNameChange = name && name.trim() !== "" && name.trim() !== user.name;
+    const hasNameChange =
+      name && name.trim() !== "" && name.trim() !== user.name;
     const hasPasswordChange = !!newPassword;
 
     if (!hasNameChange && !hasPasswordChange) {

@@ -108,7 +108,7 @@
       "title": "Sign in to VeriFlow",
       "subtitle": "Access your AI verification dashboard and automation tools.",
       "email": "Email Address",
-      "password": "Password", 
+      "password": "Password",
       "button": "Login",
       "noAccount": "Don’t have an account?",
       "signupLink": "Create Account"
@@ -292,5 +292,5 @@
         "subtitle": "Review and create document"
       }
     }
-  } 
+  }
 }

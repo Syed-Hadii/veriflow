@@ -745,7 +745,9 @@ function Stepper({ steps, currentStep, compact = false, t }) {
               {isComplete ? <Check size={14} /> : index + 1}
             </div>
             <span className="whitespace-nowrap text-xs font-semibold">
-              {step.title.startsWith("createDocument.") ? t(step.title) : step.title}
+              {step.title.startsWith("createDocument.")
+                ? t(step.title)
+                : step.title}
             </span>
           </div>
         );
