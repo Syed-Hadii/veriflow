@@ -1,0 +1,19 @@
+<svg width="760" height="220" viewBox="0 0 760 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">VeriFlow logo lockup</title><desc id="desc">VeriFlow logo mark with wordmark.</desc>
+<defs>
+  <linearGradient id="vf-g" x1="24" y1="40" x2="220" y2="140" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#2563EB"/><stop offset="0.52" stop-color="#06B6D4"/><stop offset="1" stop-color="#22D3EE"/>
+  </linearGradient>
+</defs>
+<g transform="translate(22 25) scale(.88)">
+<path d="M18 48h48c8 0 14 4 18 10l31 46 41-66c4-7 11-11 19-11h58l-17 29h-34c-4 0-8 2-10 6l-51 82c-8 13-27 13-35 0L48 76H34L18 48Z" fill="url(#vf-g)"/>
+<path d="M21 84h31l48 71c8 12 26 12 34 0l44-70h30" stroke="url(#vf-g)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M121 127h57c8 0 15-7 15-15v-7c0-8 7-15 15-15h19" stroke="url(#vf-g)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M137 147h55c8 0 15-7 15-15v-1c0-8 7-15 15-15h9" stroke="url(#vf-g)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M149 101h74" stroke="url(#vf-g)" stroke-width="10" stroke-linecap="round"/>
+<circle cx="238" cy="101" r="10" stroke="#22D3EE" stroke-width="7" fill="#fff"/>
+<circle cx="238" cy="116" r="10" stroke="#22D3EE" stroke-width="7" fill="#fff"/>
+<circle cx="230" cy="132" r="10" stroke="#22D3EE" stroke-width="7" fill="#fff"/>
+</g>
+<text x="285" y="136" font-family="Inter, Space Grotesk, Arial, sans-serif" font-size="78" font-weight="800" letter-spacing="-3" fill="#07112B">VeriFlow</text>
+</svg>

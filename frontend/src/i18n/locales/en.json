@@ -1,0 +1,273 @@
+{
+  "nav": {
+    "features": "Features",
+    "workflow": "Workflow",
+    "demo": "Demo",
+    "brand": "Brand Kit",
+    "auth": "Login / Register"
+  },
+
+  "theme": {
+    "dark": "Dark mode",
+    "light": "Light mode"
+  },
+
+  "hero": {
+    "badge": "AI verification, automation and trust in one flow",
+    "title1": "Verify data faster.",
+    "title2": "Run processes smarter.",
+    "description": "VeriFlow helps companies verify documents, applications, deals and user data using AI logic, secure rules and automated scenarios.",
+    "primaryBtn": "View Interface",
+    "secondaryBtn": "Download Brand Kit"
+  },
+
+  "stats": {
+    "accuracy": "verification accuracy",
+    "faster": "faster processing",
+    "monitoring": "AI monitoring"
+  },
+
+  "features": {
+    "title": "Platform Features",
+    "description": "Ready-made AI modules for verification, routing, automation and analytics — all inside one stylish platform.",
+
+    "items": {
+      "verification": {
+        "title": "Verification Engine",
+        "desc": "Verification of documents, applications and profiles using rules, sources and AI risk assessment."
+      },
+
+      "decision": {
+        "title": "AI Decision Layer",
+        "desc": "Smart recommendations, scoring and automated decisions for common cases."
+      },
+
+      "flow": {
+        "title": "Flow Automation",
+        "desc": "Configurable action chains from data upload to final status and notifications."
+      },
+
+      "security": {
+        "title": "Trust & Security",
+        "desc": "Encryption, audit logs and transparent verification history for every process."
+      },
+
+      "api": {
+        "title": "API First",
+        "desc": "Connect VeriFlow with CRM, CMS, landing pages, internal systems and SaaS services."
+      },
+
+      "analytics": {
+        "title": "Live Analytics",
+        "desc": "Dashboards for statuses, errors, conversions, processing speed and data quality."
+      }
+    }
+  },
+
+  "workflow": {
+    "title": "How VeriFlow Works",
+    "description": "Users upload data, AI checks the context, the system launches the correct scenario and returns a clear result.",
+
+    "steps": {
+      "step1": {
+        "title": "Collection",
+        "desc": "Form, API or document import."
+      },
+
+      "step2": {
+        "title": "Verification",
+        "desc": "AI analysis, rules and risk scoring."
+      },
+
+      "step3": {
+        "title": "Automation",
+        "desc": "Routing, tasks and notifications."
+      },
+
+      "step4": {
+        "title": "Result",
+        "desc": "Verified, Review or Rejected."
+      }
+    }
+  },
+
+  "cta": {
+    "title": "VeriFlow — verified data, automated flow.",
+    "description": "A stylish AI service for websites, products and internal business processes.",
+    "button": "Back to top"
+  },
+
+  "footer": {
+    "text": "AI Verification & Automation Platform."
+  },
+  "auth": {
+    "backToWebsite": "Back to Website",
+
+    "login": {
+      "badge": "Welcome Back",
+      "title": "Sign in to VeriFlow",
+      "subtitle": "Access your AI verification dashboard and automation tools.",
+      "email": "Email Address",
+      "password": "Password", 
+      "button": "Login",
+      "noAccount": "Don’t have an account?",
+      "signupLink": "Create Account"
+    },
+
+    "signup": {
+      "badge": "Create Account",
+      "title": "Get started with VeriFlow",
+      "subtitle": "Create your account and start automating verification workflows.",
+      "username": "Username",
+      "email": "Email Address",
+      "password": "Password",
+      "button": "Create Account",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Login"
+    },
+
+    "showPassword": "Show",
+    "hidePassword": "Hide"
+  },
+  "lang": {
+    "en": "EN",
+    "ru": "RU"
+  },
+
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Update your profile details and account credentials.",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "save": "Save Changes",
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "emailCannotChange": "Email cannot be changed",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm New Password",
+    "currentPasswordPlaceholder": "Enter current password to change password",
+    "newPasswordPlaceholder": "Enter new password (min. 6 characters)",
+    "confirmPasswordPlaceholder": "Confirm your new password",
+    "show": "Show",
+    "hide": "Hide",
+    "passwordStrength": "Password strength:",
+    "good": "Good",
+    "tooShort": "Too short",
+    "success": "Profile updated successfully!",
+    "error": "Failed to update profile",
+    "noChanges": "No changes to update",
+    "changesDiscarded": "Changes discarded",
+    "sessionExpired": "Session expired. Please login again."
+  },
+  "dashboard": {
+    "watermark": "Developed By Devintric",
+    "sidebar": {
+      "dashboard": "Dashboard",
+      "templates": "Templates",
+      "createDocument": "Create Document",
+      "history": "History",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "topbar": {
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "welcomeBadge": "Dashboard Overview",
+    "welcomeTitle": "Welcome back,",
+    "welcomeSubtitle": "Use the quick actions below to manage templates, generate documents, review history and update settings.",
+    "cards": {
+      "templates": {
+        "title": "Template List",
+        "desc": "Browse all available templates and start a document from one."
+      },
+      "createDocument": {
+        "title": "Create Document",
+        "desc": "Generate a new document using a selected template."
+      },
+      "history": {
+        "title": "History",
+        "desc": "See all generated files and past activity."
+      },
+      "settings": {
+        "title": "Settings",
+        "desc": "Update username, password and account details."
+      }
+    }
+  },
+  "history": {
+    "title": "History",
+    "subtitle": "Track all generated documents and exported files in one place.",
+    "table": {
+      "id": "Document ID",
+      "template": "Template",
+      "status": "Status",
+      "date": "Date",
+      "format": "Format"
+    }
+  },
+  "templates": {
+    "title": "Templates",
+    "subtitle": "Choose a template and use it to create a new document.",
+    "useButton": "Use this template"
+  },
+  "createDocument": {
+    "title": "Create Document",
+    "subtitle": "Complete the steps on the left and see the live preview on the right before generating your final file.",
+    "selectedTemplate": "Selected Template",
+    "noTemplateSelected": "No template selected",
+    "stepLabel": "Step",
+    "back": "Back",
+    "next": "Next",
+    "createButton": "Create Document",
+    "creating": "Creating...",
+    "front": "Front",
+    "backSide": "Back",
+    "previewTitle": "Live Preview",
+    "previewSubtitle": "Front and back template preview updates while you fill the form.",
+    "stepsPanelTitle": "Progress",
+    "stepsPanelSubtitle": "Complete all steps to activate the create button.",
+    "stepsDone": "Steps done",
+    "done": "Done",
+    "pending": "Pending",
+    "reviewTitle": "Review before create",
+    "createdSuccess": "Document created successfully",
+    "createdSubtitle": "Now you can download it in PDF, PNG or JPEG format.",
+    "downloadPdf": "Download as PDF",
+    "downloadPng": "Download as PNG",
+    "downloadJpeg": "Download as JPEG",
+    "fields": {
+      "fullName": "Full Name",
+      "idNumber": "ID Number",
+      "dob": "Date of Birth",
+      "nationality": "Nationality",
+      "photo": "Photo Upload",
+      "signature": "Signature Upload",
+      "consent": "I confirm that the data is correct and ready to generate."
+    },
+    "placeholders": {
+      "fullName": "Enter full name",
+      "idNumber": "Enter ID number",
+      "nationality": "Enter nationality"
+    },
+    "previewPlaceholders": {
+      "fullName": "Full Name",
+      "idNumber": "ID Number",
+      "dob": "Date of Birth",
+      "nationality": "Nationality"
+    },
+    "uploadHint": {
+      "photo": "Upload photo",
+      "signature": "Upload signature"
+    },
+    "steps": {
+      "step1": { "title": "Basic Details" },
+      "step2": { "title": "Personal Details" },
+      "step3": { "title": "Media Uploads" },
+      "step4": { "title": "Confirmation" }
+    }
+  } 
+}
