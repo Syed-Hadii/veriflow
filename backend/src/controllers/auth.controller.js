@@ -1,5 +1,4 @@
 const User = require("../models/User");
-const bcrypt = require("bcryptjs");
 
 // @desc    Register a new user
 // @route   POST /api/auth/signup
@@ -137,17 +136,30 @@ const updateProfile = async (req, res) => {
     const userId = req.user._id;
     const { name, currentPassword, newPassword } = req.body;
 
-    // Build update object
-    const updateFields = {};
+    const user = await User.findById(userId).select("+password");
 
-    // Handle name update
-    if (name && name.trim() !== "") {
-      updateFields.name = name.trim();
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
     }
 
-    // Handle password update
-    if (newPassword) {
-      // Check if current password is provided
+    const hasNameChange = name && name.trim() !== "" && name.trim() !== user.name;
+    const hasPasswordChange = !!newPassword;
+
+    if (!hasNameChange && !hasPasswordChange) {
+      return res.status(400).json({
+        success: false,
+        message: "Please provide name or new password to update",
+      });
+    }
+
+    if (hasNameChange) {
+      user.name = name.trim();
+    }
+
+    if (hasPasswordChange) {
       if (!currentPassword) {
         return res.status(400).json({
           success: false,
@@ -155,7 +167,6 @@ const updateProfile = async (req, res) => {
         });
       }
 
-      // Validate new password length
       if (newPassword.length < 6) {
         return res.status(400).json({
           success: false,
@@ -163,10 +174,6 @@ const updateProfile = async (req, res) => {
         });
       }
 
-      // Get user with password field
-      const user = await User.findById(userId).select("+password");
-
-      // Verify current password
       const isPasswordMatch = await user.matchPassword(currentPassword);
       if (!isPasswordMatch) {
         return res.status(401).json({
@@ -175,35 +182,22 @@ const updateProfile = async (req, res) => {
         });
       }
 
-      // Hash new password (will be handled by pre-save middleware)
-      updateFields.password = newPassword;
+      user.password = newPassword;
     }
 
-    // Check if any field to update
-    if (Object.keys(updateFields).length === 0) {
-      return res.status(400).json({
-        success: false,
-        message: "Please provide name or new password to update",
-      });
-    }
-
-    // Update user
-    const updatedUser = await User.findByIdAndUpdate(userId, updateFields, {
-      new: true, // Return updated document
-      runValidators: true, // Run validation
-    }).select("-password");
+    await user.save();
 
     res.status(200).json({
       success: true,
       message: "Profile updated successfully",
       data: {
-        _id: updatedUser._id,
-        name: updatedUser.name,
-        email: updatedUser.email,
-        role: updatedUser.role,
-        isActive: updatedUser.isActive,
-        lastLogin: updatedUser.lastLogin,
-        updatedAt: updatedUser.updatedAt,
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        isActive: user.isActive,
+        lastLogin: user.lastLogin,
+        updatedAt: user.updatedAt,
       },
     });
   } catch (error) {

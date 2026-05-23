@@ -46,7 +46,7 @@ export default function TemplatesPage() {
 
         {!isLoading && templates.length === 0 && (
           <div className="rounded-[28px] border border-[var(--line)] bg-[var(--surface)] p-6 text-sm text-[var(--muted)]">
-            No templates available yet.
+            {t("templates.emptyState")}
           </div>
         )}
 

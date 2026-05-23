@@ -212,11 +212,18 @@
   "templates": {
     "title": "Templates",
     "subtitle": "Choose a template and use it to create a new document.",
+    "loading": "Loading templates...",
+    "emptyState": "No templates available yet.",
+    "cardDescription": "Document template",
+    "selectButton": "Select template",
     "useButton": "Use this template"
   },
   "createDocument": {
     "title": "Create Document",
     "subtitle": "Complete the steps on the left and see the live preview on the right before generating your final file.",
+    "selectTemplate": "Select template",
+    "chooseTemplateToStart": "Choose a template to start",
+    "stepCount": "Step {current} of {total}",
     "selectedTemplate": "Selected Template",
     "noTemplateSelected": "No template selected",
     "stepLabel": "Step",
@@ -224,10 +231,12 @@
     "next": "Next",
     "createButton": "Create Document",
     "creating": "Creating...",
+    "loading": "Loading template...",
+    "processing": "Processing document...",
     "front": "Front",
     "backSide": "Back",
-    "previewTitle": "Live Preview",
-    "previewSubtitle": "Front and back template preview updates while you fill the form.",
+    "previewTitle": "Template Demo",
+    "previewSubtitle": "Preview how the selected template will look before you generate the document.",
     "stepsPanelTitle": "Progress",
     "stepsPanelSubtitle": "Complete all steps to activate the create button.",
     "stepsDone": "Steps done",
@@ -239,6 +248,8 @@
     "downloadPdf": "Download as PDF",
     "downloadPng": "Download as PNG",
     "downloadJpeg": "Download as JPEG",
+    "uploadImage": "Upload image",
+    "imageAdded": "Image added",
     "fields": {
       "fullName": "Full Name",
       "idNumber": "ID Number",
@@ -264,10 +275,22 @@
       "signature": "Upload signature"
     },
     "steps": {
-      "step1": { "title": "Basic Details" },
-      "step2": { "title": "Personal Details" },
-      "step3": { "title": "Media Uploads" },
-      "step4": { "title": "Confirmation" }
+      "personal": {
+        "title": "Personal details",
+        "subtitle": "Basic identity information"
+      },
+      "details": {
+        "title": "Document details",
+        "subtitle": "Document specific information"
+      },
+      "media": {
+        "title": "Uploads",
+        "subtitle": "Images, signatures, or scans"
+      },
+      "review": {
+        "title": "Final step",
+        "subtitle": "Review and create document"
+      }
     }
   } 
 }

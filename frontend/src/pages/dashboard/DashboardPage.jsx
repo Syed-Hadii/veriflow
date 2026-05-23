@@ -38,12 +38,12 @@ export default function DashboardPage() {
       title: t("dashboard.cards.createDocument.title"),
       desc: t("dashboard.cards.createDocument.desc"),
     },
-    {
-      to: "/history",
-      icon: History,
-      title: t("dashboard.cards.history.title"),
-      desc: t("dashboard.cards.history.desc"),
-    },
+    // {
+    //   to: "/history",
+    //   icon: History,
+    //   title: t("dashboard.cards.history.title"),
+    //   desc: t("dashboard.cards.history.desc"),
+    // },
     {
       to: "/settings",
       icon: Settings,
@@ -72,7 +72,7 @@ export default function DashboardPage() {
         </p>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 grid-cols-3">
         {cards.map((card) => {
           const Icon = card.icon;
 

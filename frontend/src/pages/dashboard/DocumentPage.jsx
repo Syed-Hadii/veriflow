@@ -100,8 +100,8 @@ const buildSteps = (elements) => {
   if (buckets.personal.length) {
     steps.push({
       key: "personal",
-      title: "Personal details",
-      subtitle: "Basic identity information",
+      title: "createDocument.steps.personal.title",
+      subtitle: "createDocument.steps.personal.subtitle",
       elements: buckets.personal,
     });
   }
@@ -109,8 +109,8 @@ const buildSteps = (elements) => {
   if (buckets.details.length) {
     steps.push({
       key: "details",
-      title: "Document details",
-      subtitle: "Document specific information",
+      title: "createDocument.steps.details.title",
+      subtitle: "createDocument.steps.details.subtitle",
       elements: buckets.details,
     });
   }
@@ -118,16 +118,16 @@ const buildSteps = (elements) => {
   if (buckets.media.length) {
     steps.push({
       key: "media",
-      title: "Uploads",
-      subtitle: "Images, signatures, or scans",
+      title: "createDocument.steps.media.title",
+      subtitle: "createDocument.steps.media.subtitle",
       elements: buckets.media,
     });
   }
 
   steps.push({
     key: "review",
-    title: "Final step",
-    subtitle: "Review and create document",
+    title: "createDocument.steps.review.title",
+    subtitle: "createDocument.steps.review.subtitle",
     elements: [],
   });
 
@@ -320,14 +320,14 @@ export default function DocumentPage() {
           <div className="flex flex-wrap items-start justify-between gap-3">
             <div>
               <p className="text-sm font-bold text-[#2563EB]">
-                Select template
+                {t("createDocument.selectTemplate")}
               </p>
               <h2 className="text-2xl font-black tracking-[-0.04em] text-[var(--text)]">
-                Choose a template to start
+                {t("createDocument.chooseTemplateToStart")}
               </h2>
             </div>
             <div className="rounded-full border border-[var(--line)] bg-[var(--surface-2)] px-4 py-2 text-xs font-semibold text-[var(--text)]">
-              Step 1 of 1
+              {t("createDocument.stepCount", { current: 1, total: 1 })}
             </div>
           </div>
 
@@ -347,7 +347,7 @@ export default function DocumentPage() {
 
           {!isLoading && templates.length === 0 && (
             <p className="mt-6 text-sm text-[var(--muted)]">
-              No templates available yet.
+              {t("templates.emptyState")}
             </p>
           )}
 
@@ -376,10 +376,10 @@ export default function DocumentPage() {
                       {item.title}
                     </p>
                     <p className="mt-1 text-sm text-[var(--muted)]">
-                      {item.description || "Document template"}
+                      {item.description || t("templates.cardDescription")}
                     </p>
                     <span className="mt-3 inline-flex items-center rounded-full border border-[var(--line)] bg-[var(--surface)] px-3 py-1 text-xs font-semibold text-[var(--text)]">
-                      Select template
+                      {t("templates.selectButton")}
                     </span>
                   </div>
                 </button>
@@ -409,7 +409,7 @@ export default function DocumentPage() {
         </div>
       </div>
 
-      <Stepper steps={steps} currentStep={currentStep} />
+      <Stepper steps={steps} currentStep={currentStep} t={t} />
 
       <div className="grid gap-6 lg:grid-cols-[3fr_2fr]">
         <div className="space-y-6">
@@ -456,7 +456,7 @@ export default function DocumentPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-bold text-[#2563EB]">
-                      {activeStep?.title}
+                      {t(activeStep?.title)}
                     </p>
                   </div>
                 </div>
@@ -466,6 +466,7 @@ export default function DocumentPage() {
                     <DynamicField
                       key={element.key}
                       element={element}
+                      t={t}
                       value={formData[element.key]}
                       onChange={(value) => updateValue(element.key, value)}
                       onFile={(file) => handleFile(element.key, file)}
@@ -473,7 +474,7 @@ export default function DocumentPage() {
                   ))
                 ) : (
                   <div className="rounded-2xl border border-dashed border-[var(--line)] bg-[var(--surface)] px-4 py-5 text-sm text-[var(--muted)]">
-                    Review the entered details and create the document.
+                    {t(activeStep?.subtitle)}
                   </div>
                 )}
               </div>
@@ -492,7 +493,7 @@ export default function DocumentPage() {
                 disabled={currentStep === 0}
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface)] px-4 py-3 text-sm font-bold text-[var(--text)] transition hover:scale-[1.01] disabled:cursor-not-allowed disabled:opacity-50"
               >
-                Back
+                {t("createDocument.back")}
               </button>
 
               {currentStep < steps.length - 1 ? (
@@ -506,7 +507,7 @@ export default function DocumentPage() {
                   className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-bold text-white transition hover:scale-[1.01]"
                   style={{ background: "var(--grad)" }}
                 >
-                  Continue
+                  {t("createDocument.next")}
                 </button>
               ) : (
                 <button
@@ -599,7 +600,7 @@ export default function DocumentPage() {
             </div>
           )}
 
-          <Stepper steps={steps} currentStep={currentStep} compact />
+          <Stepper steps={steps} currentStep={currentStep} compact t={t} />
         </div>
 
         <div className="space-y-4">
@@ -637,7 +638,7 @@ export default function DocumentPage() {
   );
 }
 
-function DynamicField({ element, value, onChange, onFile }) {
+function DynamicField({ element, value, onChange, onFile, t }) {
   const label = element?.label || element?.key;
   const placeholder = element?.placeholder || "";
 
@@ -651,7 +652,7 @@ function DynamicField({ element, value, onChange, onFile }) {
         </label>
         <label className="flex cursor-pointer items-center gap-3 rounded-2xl border border-dashed border-[var(--line)] bg-[var(--surface)] px-4 py-4 text-sm font-semibold text-[var(--text)]">
           <Upload size={18} />
-          <span>{placeholder || "Upload image"}</span>
+          <span>{placeholder || t("createDocument.uploadImage")}</span>
           <input
             type="file"
             accept="image/*"
@@ -660,7 +661,9 @@ function DynamicField({ element, value, onChange, onFile }) {
           />
         </label>
         {value && (
-          <p className="mt-2 text-xs text-[var(--muted)]">Image added</p>
+          <p className="mt-2 text-xs text-[var(--muted)]">
+            {t("createDocument.imageAdded")}
+          </p>
         )}
       </div>
     );
@@ -708,7 +711,7 @@ function DynamicField({ element, value, onChange, onFile }) {
   );
 }
 
-function Stepper({ steps, currentStep, compact = false }) {
+function Stepper({ steps, currentStep, compact = false, t }) {
   return (
     <div
       className={`flex flex-wrap items-center gap-3 overflow-x-auto ${
@@ -742,7 +745,7 @@ function Stepper({ steps, currentStep, compact = false }) {
               {isComplete ? <Check size={14} /> : index + 1}
             </div>
             <span className="whitespace-nowrap text-xs font-semibold">
-              {step.title}
+              {step.title.startsWith("createDocument.") ? t(step.title) : step.title}
             </span>
           </div>
         );
